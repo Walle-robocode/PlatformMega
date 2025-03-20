@@ -1,7 +1,7 @@
 #include <LiquidCrystal_I2C.h>
 #include <FastLED.h>
 #include <TimerOne.h>
-#include "../libs/ServoSmooth/ServoSmooth.cpp"
+#include "libs/ServoSmooth/ServoSmooth.cpp"
 
 #include "utils.h"
 #include "LCD_1602_RUS_ALL.h"
