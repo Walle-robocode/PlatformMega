@@ -136,7 +136,7 @@ void ESPHandler::handle() {
     case MOVE_LEFT: {
       lcd.clear();
       lcd.setCursor(0, 0);
-      lcd.print("Рухаюсь вліво");
+      lcd.print("Рухаюсь влiво");
       _motors->left(ESP_MOTOR_SPEED);
       delay(1000);
       _motors->stop();
@@ -156,7 +156,10 @@ void ESPHandler::handle() {
     }
     case TIRED: {
       _mp3->play(MP3_SOUND_TIRED_SOUND);
-      delay(1500);
+      delay(2000);
+      lcd.clear();
+      lcd.setCursor(0, 0);
+      lcd.print("Вимкнення...");
       for (int i = 0; i < 10; i++) {
         _led->setLed(LED_LEFT, 0, 255 - random(0, 200), 0);
         _led->setLed(LED_RIGHT, 0, 255 - random(0, 200), 0);
@@ -166,26 +169,58 @@ void ESPHandler::handle() {
         _led->show();
         lcd.noBacklight();
         delay(random(20, 100));
+        lcd.backlight();
       }
+      lcd.noBacklight();
       delay(2000);
       _led->setAllLeds(LED_RED);
       _led->show();
       delay(100);
       _mp3->play(MP3_SOUND_HA_HA_JOKE);
-      delay(2000);
+      lcd.clear();
       lcd.backlight();
+      lcd.setCursor(0, 0);
+      lcd.print("Вiдновлення...");
+      delay(2000);
+      _led->setAllLeds(LED_DEFAULT_COLOR);
+      _led->show();
       _sendAck();
       break;
     }
     case WHATS_YOUR_NAME: {
       _mp3->play(MP3_SOUND_WALL_E_VOICE);
+      lcd.clear();
+      lcd.setCursor(5, 0);
+      lcd.print("WALL-E");
       delay(2000);
       _sendAck();
       break;
     }
     case WHERE_ARE_YOU_FROM: {
       _mp3->play(MP3_SOUND_WHO_I_AM_SOUND);
+      lcd.clear();
+      lcd.setCursor(0, 0);
+      lcd.print("Я з ROBOCODE");
       delay(4000);
+      _sendAck();
+      break;
+    }
+    case BATTERY_LEVEL: {
+      uint16_t batteryValue = analogRead(1);
+      uint8_t batteryLevel = map(batteryValue, 0, 1023, 0, 100);
+      _led->pickBatteryColor(batteryLevel);
+      /// TODO: play battery level
+      ///delay(1500);
+      _mp3->sayNumber(batteryLevel);
+      /// play percents
+      _mp3->play(MP3_SOUND_MAY_TYPE_ON_THE_DISPLAY);
+      delay(2300);
+      lcd.clear();
+      _mp3->play(MP3_SOUND_TYPING_SONG);
+      _lcdPrint("Battery: " + String(batteryLevel) + "%");
+      delay(5000);
+      _led->setAllLeds(LED_DEFAULT_COLOR);
+      _led->show();
       _sendAck();
       break;
     }

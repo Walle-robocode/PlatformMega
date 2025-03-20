@@ -29,6 +29,7 @@
 #define IP                'I'
 #define SPEAK             'S'
 #define RECOGNIZE         'R'
+#define BATTERY_LEVEL     'C'
 
 #define ESP_ACK_CODE      '#'
 

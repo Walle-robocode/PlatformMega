@@ -4,7 +4,7 @@
 ///Macros
 
 ///Debuging
-// #define DEBUG 1
+#define DEBUG 1
 #ifdef DEBUG
 #define DEBUG_LOG(msg) Serial.println(F(msg))
 #define DEBUG_LOG_VAR(msg) Serial.println(msg)

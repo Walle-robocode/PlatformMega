@@ -42,6 +42,7 @@ public:
   void show();
 
   void pickTemperatureColor(int temperature);
+  void pickBatteryColor(int batteryLevel);
 
 private:
   CRGB _leds[NUM_LEDS];

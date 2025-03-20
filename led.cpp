@@ -46,3 +46,18 @@ void LED::pickTemperatureColor(int temperature) {
   }
   show();
 }
+
+void LED::pickBatteryColor(int batteryLevel) {
+  if (batteryLevel < 10) {
+    setAllLeds(LED_RED);
+  } else if (batteryLevel < 20) {
+    setAllLeds(LED_ORANGE);
+  } else if (batteryLevel < 30) {
+    setAllLeds(LED_YELLOW);
+  } else if (batteryLevel < 40) {
+    setAllLeds(LED_GREEN);
+  } else {
+    setAllLeds(LED_BLUE);
+  }
+  show();
+}
