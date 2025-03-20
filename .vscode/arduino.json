@@ -1,7 +1,5 @@
 {
-    "sketch": "WalleMega.ino",
-    "configuration": "cpu=atmega2560",
     "board": "arduino:avr:mega",
-    "port": "/dev/ttyUSB1",
-    "programmer": "avrisp"
+    "port": "/dev/ttyUSB0",
+    "sketch": "WalleMega.ino"
 }
