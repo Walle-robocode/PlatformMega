@@ -6,7 +6,9 @@
 
 ## WALL-E ROBOCODE MEGA2560 Platform
 
-
+<p align="center">
+  <img src="https://github.com/Walle-robocode/PlatformMega/blob/master/docs/img/IMG_9801.png?raw=true" alt="WALL-E Robot" width="400"/>
+</p>
 
 ### Description:
 ___
@@ -58,3 +60,5 @@ ___
 Contributing to this software is warmly welcomed.
 1. Test it, and if you find any problems, then post an issue.
 2. Help us solve the issues or other bugs.
+
+___
