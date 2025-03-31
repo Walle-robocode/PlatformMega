@@ -15,7 +15,7 @@
 
 
 // Read pgmspace (Macro)
-#define _RM(x) (void *)pgm_read_word(&x)
+#define _RM(x) (uint8_t *)pgm_read_word(&x)
 
 
 #endif // _UTILS_H_

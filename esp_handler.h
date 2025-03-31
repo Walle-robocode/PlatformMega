@@ -2,6 +2,7 @@
 #define ESP_HANDLER_H
 
 #include <Arduino.h>
+#include <HardwareSerial.h>
 #include "utils.h"
 #include "LCD_1602_RUS_ALL.h"
 #include "dht.h"
