@@ -1,5 +1,0 @@
-{
-    "board": "arduino:avr:mega",
-    "port": "/dev/ttyUSB0",
-    "sketch": "WalleMega.ino"
-}

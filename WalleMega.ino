@@ -28,7 +28,7 @@ void initAllPeriphery() {
   Serial.begin(9600);   // Default serial communication
   esp->begin();
   bluetooth->begin();
-  mp3->begin(10); // 0 - 30 - volume
+  mp3->begin(25); // 0 - 30 - volume
 
   lcd.init();
   lcd.backlight();
